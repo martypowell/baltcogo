@@ -1,14 +1,14 @@
 'use strict';
 
-describe('myApp.view1 module', function() {
+describe('baltcoGo.reporter module', function() {
 
-  beforeEach(module('myApp.view1'));
+  beforeEach(module('baltcoGo.reporter'));
 
-  describe('view1 controller', function(){
+  describe('reporter controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body
-      var view1Ctrl = $controller('View1Ctrl');
+      var view1Ctrl = $controller('ReporterCtrl');
       expect(view1Ctrl).toBeDefined();
     }));
 

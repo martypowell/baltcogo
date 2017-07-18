@@ -1,14 +1,14 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('baltcoGo.reporter', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
+  $routeProvider.when('/reporter', {
+    templateUrl: 'reporter/reporter.html',
+    controller: 'ReporterCtrl'
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('ReporterCtrl', [function() {
 
 }]);

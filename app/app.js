@@ -4,14 +4,14 @@
   // Declare app level module which depends on views, and components
   angular.module('baltcoGo', [
     'ngRoute',
-    'myApp.view1',
-    'myApp.view2',
+    'baltcoGo.viewer',
+    'baltcoGo.reporter',
     'myApp.version'
   ]).
     config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix('!');
 
-      $routeProvider.otherwise({ redirectTo: '/view1' });
+      $routeProvider.otherwise({ redirectTo: '/reporter' });
     }]);
 })();
 
