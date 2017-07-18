@@ -1,15 +1,15 @@
 'use strict';
 
-describe('myApp.view2 module', function() {
+describe('baltcoGo.viewer module', function() {
 
-  beforeEach(module('myApp.view2'));
+  beforeEach(module('baltcoGo.viewer'));
 
-  describe('view2 controller', function(){
+  describe('viewer controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body
-      var view2Ctrl = $controller('View2Ctrl');
-      expect(view2Ctrl).toBeDefined();
+      var viewerCtrl = $controller('ViewerCtrl');
+      expect(viewerCtrl).toBeDefined();
     }));
 
   });

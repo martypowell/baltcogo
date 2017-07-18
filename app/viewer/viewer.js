@@ -1,14 +1,17 @@
-'use strict';
+(function () {
+  'use strict';
+  angular.module('baltcoGo.viewer', ['ngRoute'])
 
-angular.module('baltcoGo.viewer', ['ngRoute'])
+    .config(['$routeProvider', function ($routeProvider) {
+      $routeProvider.when('/viewer', {
+        templateUrl: 'viewer/viewer.html',
+        controller: 'ViewerCtrl'
+      });
+    }])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/viewer', {
-    templateUrl: 'viewer/viewer.html',
-    controller: 'ViewerCtrl'
-  });
-}])
+    .controller('ViewerCtrl', [function () {
 
-.controller('ViewerCtrl', [function() {
+    }]);
+})();
 
-}]);
+
