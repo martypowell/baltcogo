@@ -32,6 +32,7 @@
         self.isLoading = false;
         self.latitude = 0;
         self.longitude = 0;
+        self.panels = {};
 
         var mapSettings = {
           center: {
@@ -52,9 +53,10 @@
         // google.maps.event.addListener(map, 'click', mapClickHandler);
 
         angular.element(document).find('#citysourced-reporter-form').on('keyup keypress', preventSubmitOnEnterPressHandler);
+
         angular.element(document).find('#address').on('keyup', autocompleteHandler);
 
-        $scope.onAddressKeyUp = autocompleteHandler;
+        self.onAddressKeyUp = autocompleteHandler;
 
 
         angular.element(document).find(window).on('keydown', autocompleteResultButtonKeyboardNavigationHandler);
@@ -327,7 +329,6 @@
           self.descriptionOfAnimalId = 0;
           self.descriptionOfLocationId = 0;
           self.otherDescriptionId = 0;
-
         }
 
         function geocodeAndMarkAddress(singleLineAddress) {
@@ -362,7 +363,7 @@
         }
 
         function validatePanel() {
-          var requiredElements = angular.element(document).find('#citysourced-reporter-form .panel:visible [required]'),
+          var requiredElements = angular.element('#citysourced-reporter-form .panel:visible [required]'),
             requiredElementsCount = requiredElements.length,
             validRequiredElementsCount = requiredElements.filter('.ng-valid').length,
             controls = $scope.citySourcedReporterForm.$$controls;
