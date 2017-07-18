@@ -58,9 +58,7 @@
 
         self.onAddressKeyUp = autocompleteHandler;
 
-
         angular.element(document).find(window).on('keydown', autocompleteResultButtonKeyboardNavigationHandler);
-
 
         self.fileReportClick = function () {
           if (!validatePanel())

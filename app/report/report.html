@@ -207,7 +207,7 @@
         <input 
           type="button" 
           class="seButton pull-right" 
-          ng-disabled="reporter.panels[reporter.page].isValid" 
+          ng-disabled="!reporter.panels[reporter.page].isValid" 
           ng-if="reporter.page < 3" 
           id="nextButton" 
           value="Next" 
