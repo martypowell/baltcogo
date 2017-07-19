@@ -8,8 +8,8 @@ describe('baltcoGo.report module', function() {
 
     it('should ....', inject(function($controller) {
       //spec body
-      var view1Ctrl = $controller('ReportCtrl');
-      expect(view1Ctrl).toBeDefined();
+      var rprtCtrl = $controller('ReportCtrl');
+      expect(rprtCtrl).toBeDefined();
     }));
 
   });
