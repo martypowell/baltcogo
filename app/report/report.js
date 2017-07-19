@@ -35,16 +35,16 @@
         self.panels = {};
 
         var mapSettings = {
-          center: {
-            lat: 39.4003288,
-            lng: -76.60652470000002
+            center: {
+              lat: 39.4003288,
+              lng: -76.60652470000002
+            },
+            scrollwheel: false,
+            zoom: 14,
+            mapTypeId: 'roadmap',
+            mapTypeControl: false,
+            streetViewControl: false
           },
-          scrollwheel: false,
-          zoom: 14,
-          mapTypeId: 'roadmap',
-          mapTypeControl: false,
-          streetViewControl: false
-        },
           autocompleteSettings = {
             types: ['geocode']
           };
@@ -67,44 +67,44 @@
           /*** Static fields **********/
 
           var data = [{
-            name: 'Category',
-            id: self.category,
-            value: getValueForId(self.categoryData, self.category)
-          },
-          {
-            name: 'SubCategory',
-            id: self.subCategory,
-            value: getValueForId(self.subCategories, self.subCategory)
-          },
-          {
-            name: 'Description',
-            id: self.descriptionId,
-            value: self.description
-          },
-          {
-            name: 'Latitude',
-            value: self.latitude
-          },
-          {
-            name: 'Longitude',
-            value: self.longitude
-          },
-          {
-            name: 'FirstName',
-            value: self.firstName
-          },
-          {
-            name: 'LastName',
-            value: self.lastName
-          },
-          {
-            name: 'Email',
-            value: self.email
-          },
-          {
-            name: 'DeviceNumber',
-            value: self.deviceNumber
-          }
+              name: 'Category',
+              id: self.category,
+              value: getValueForId(self.categoryData, self.category)
+            },
+            {
+              name: 'SubCategory',
+              id: self.subCategory,
+              value: getValueForId(self.subCategories, self.subCategory)
+            },
+            {
+              name: 'Description',
+              id: self.descriptionId,
+              value: self.description
+            },
+            {
+              name: 'Latitude',
+              value: self.latitude
+            },
+            {
+              name: 'Longitude',
+              value: self.longitude
+            },
+            {
+              name: 'FirstName',
+              value: self.firstName
+            },
+            {
+              name: 'LastName',
+              value: self.lastName
+            },
+            {
+              name: 'Email',
+              value: self.email
+            },
+            {
+              name: 'DeviceNumber',
+              value: self.deviceNumber
+            }
           ];
 
           /*** Conditional fields **********/
@@ -260,8 +260,7 @@
                 map.setCenter(currentCenter);
               }, 500);
             }
-          }
-          else
+          } else
             $scope.citySourcedReporterForm.$setSubmitted();
         };
 
@@ -277,7 +276,7 @@
         };
 
         self.trackBreed = function () {
-          angular.element(document).find.each(self.animalBreedData, function (index, breed) {
+          angular.element.each(self.animalBreedData, function (index, breed) {
             if (breed.id === self.petType.id) {
               self.breeds = breed.breeds ? breed.breeds : [];
               self.sex = breed.sex;
@@ -510,6 +509,7 @@
           }
         }
 
-      }]);
+      }
+    ]);
 
 })(angular.module('baltcoGo'));
