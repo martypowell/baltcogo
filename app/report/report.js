@@ -14,7 +14,7 @@
       function ($http, $scope, $timeout, $routeParams, mapServiceComposite, reportService, urlsProvider) {
         var self = this;
         var targetCounty = 'Baltimore County';
-        var categoryId = ($routeParams.categoryId * 1) || 0; //TODO: have this use route params
+        var categoryId = ($routeParams.categoryId * 1) || 0; //TODO: should we be using $location instead? https://stackoverflow.com/a/19481865/1143670
         var map;
 
         $http.get(urlsProvider.endpoints["animal.breeds"]).then(breedSuccessHandler, errorHandler);
