@@ -10,13 +10,12 @@
       });
     }])
 
-    .controller('ReportCtrl', ['$http', '$scope', '$timeout', 'mapServiceComposite', 'reportService', 'urls',
-      function ($http, $scope, $timeout, mapServiceComposite, reportService, urlsProvider) {
-
-        var self = this,
-          targetCounty = 'Baltimore County',
-          categoryId = 0, //TODO: have this use route params
-          map;
+    .controller('ReportCtrl', ['$http', '$scope', '$timeout', '$routeParams', 'mapServiceComposite', 'reportService', 'urls',
+      function ($http, $scope, $timeout, $routeParams, mapServiceComposite, reportService, urlsProvider) {
+        var self = this;
+        var targetCounty = 'Baltimore County';
+        var categoryId = ($routeParams.categoryId * 1) || 0; //TODO: have this use route params
+        var map;
 
         $http.get(urlsProvider.endpoints["animal.breeds"]).then(breedSuccessHandler, errorHandler);
         $http.get(urlsProvider.endpoints["animal.colors"]).then(colorSuccessHandler, errorHandler);
