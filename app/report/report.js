@@ -48,16 +48,16 @@
             types: ['geocode']
           };
 
-        // map = mapServiceComposite.createMap('map', mapSettings);
-        // google.maps.event.addListener(map, 'click', mapClickHandler);
+        map = mapServiceComposite.createMap('map', mapSettings);
+        google.maps.event.addListener(map, 'click', mapClickHandler);
 
-        angular.element(document).find('#citysourced-reporter-form').on('keyup keypress', preventSubmitOnEnterPressHandler);
+        angular.element('#citysourced-reporter-form').on('keyup keypress', preventSubmitOnEnterPressHandler);
 
-        angular.element(document).find('#address').on('keyup', autocompleteHandler);
+        angular.element('#address').on('keyup', autocompleteHandler);
 
         self.onAddressKeyUp = autocompleteHandler;
 
-        angular.element(document).find(window).on('keydown', autocompleteResultButtonKeyboardNavigationHandler);
+        angular.element(window).on('keydown', autocompleteResultButtonKeyboardNavigationHandler);
 
         self.fileReportClick = function () {
           if (!validatePanel())
@@ -152,7 +152,7 @@
 
           if (self.animalDescription) data.push({
             name: 'Description Of Animal',
-            id: angular.element(document).find('#animalDescription').attr('data-cs-id') * 1,
+            id: angular.element('#animalDescription').attr('data-cs-id') * 1,
             value: self.animalDescription
           });
 
@@ -328,14 +328,14 @@
         }
 
         function geocodeAndMarkAddress(singleLineAddress) {
-          /* mapServiceComposite.addressLookup(singleLineAddress, function (foundAddress) {
+           mapServiceComposite.addressLookup(singleLineAddress, function (foundAddress) {
             self.latitude = foundAddress.location.y;
             self.longitude = foundAddress.location.x;
             mapServiceComposite.pan(map, self.latitude, self.longitude);
             mapServiceComposite.createMarker(map, self.latitude, self.longitude);
           }, function (err) {
             displayAddressError();
-          }); */
+          }); 
         }
 
         function getValueForId(nameIdData, id) {
@@ -404,10 +404,10 @@
             }
           } else {
             if (self.address && self.address.trim().length > 3) {
-              /* mapServiceComposite.suggestAddresses(self.address, function (autoCompleteResults) {
+               mapServiceComposite.suggestAddresses(self.address, function (autoCompleteResults) {
                 self.autocompleteResults = autoCompleteResults;
                 $scope.$apply();
-              }); */
+              }); 
             }
           }
         }
@@ -483,7 +483,7 @@
           self.latitude = event.latLng.lat();
           self.longitude = event.latLng.lng();
 
-          /* mapServiceComposite.reverseGeocode(self.latitude, self.longitude, function (response) {
+           mapServiceComposite.reverseGeocode(self.latitude, self.longitude, function (response) {
             $wrapper.removeClass('error');
             mapServiceComposite.createMarker(map, self.latitude, self.longitude);
             self.address = response.address.Street.toLowerCase() + ', ' + response.address.City.toLowerCase() + ', ' + response.address.State.toUpperCase();
@@ -493,7 +493,7 @@
             addressField.$setDirty();
             self.address = '';
             $scope.$apply();
-          }); */
+          }); 
         }
 
         function petTypeSuccessHandler(response) {
